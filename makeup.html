@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>makeup</title>
+    <style>
+#b{
+float:right;
+border-radius:6px;
+padding:5px ;
+
+}
+ .container{
+            display: flex;
+            justify-content:space-around;
+        }
+.navbar{
+background-color:black;
+border-radius: 30px;
+}
+.navbar li{
+    float: left;
+    list-style: none;
+    margin: 5px 10px;
+    padding-top: 5px;
+}
+.navbar ul{
+    overflow: auto;
+}
+.navbar li a{
+    text-decoration: none;
+    color: white;
+}
+.navbar li a:hover{
+    color: lime;
+}
+#search{
+    float: right;
+    padding: 5px 10px;
+}
+.navbar input{
+    border-radius: 10px;
+    }
+        .box {
+            border: 4px solid pink;
+            background-color: white;
+            width: 400px;
+            height: 500px;
+            margin: 15px;
+            font-size: 22px;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+        .box img{
+            width: 100%;
+           height: 400px;
+        }
+
+        
+    </style>
+    <script>
+        function addToCart(prod) {
+            val = confirm(`${prod.name}, Add to Cart?`);
+            if (val) {
+                let cart=JSON.parse(localStorage.getItem('cart'));
+                if(cart) {
+                    cart.items.push(prod);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                }
+                else localStorage.setItem('cart',JSON.stringify({'items':new Array(prod)}));
+                alert("Added to Cart")
+            }
+        }
+function fun()
+{
+document.getElementById("p1").style.color="red";
+}
+function fun1()
+{
+document.getElementById("p1").style.color="orange";
+}
+function fun2()
+{
+document.getElementById("p1").style.color="hotpink";
+}
+function fun3()
+{
+document.getElementById("p1").style.color="pink";
+}
+function fun4()
+{
+document.getElementById("p1").style.color="magenta";
+}
+function fun5()
+{
+document.getElementById("p1").style.color="purple";
+}
+function fun6()
+{
+document.getElementById("p1").style.color="violet";
+}function fun7()
+{
+document.getElementById("p1").style.color="plum";
+}function fun8()
+{
+document.getElementById("p1").style.color="orangered";
+}function fun9()
+{
+document.getElementById("p1").style.color="crimson";
+}function fun10()
+{
+document.getElementById("p1").style.color="orchid";
+}
+    </script>
+</head>
+
+<body bgcolor=lavender>
+<header>
+<nav class="navbar">
+<ul>
+<li><a href="website.html" taget="_blank">Home</a></li>
+<li><a href="about.html" taget="_blank">About</a></li>
+<li><a href="catalogue.html" taget="_blank">Catalogue</a></li>
+<li><a href="register.html" taget="_blank">Join Us</a></li>
+<li><a href="cart.html" taget="_blank">🛒</a></li>
+
+<button id="b">🔍</button>
+<input type="text" id="search" placeholder="Search This Website" >
+
+</ul>
+</nav>
+</header>
+
+    
+    <div class="container">
+    <div class="box"><img src="m5.jpg">
+        <center>Pressed Powder<br/>Rs:899<br/>
+            <input type="button" value="Add To Cart"
+                onclick="addToCart({'img':'m5.jpg', 'name':'Pressed Powder','price':'Rs:899'})">
+        </center>
+    </div>
+    <div class="box" id="box4"><img src="m6.jpg">
+        <center>Matte Lipstick<br/>Rs:659<br/>
+            <input type="button" value="Add To Cart"
+                onclick="addToCart({'img':'m6.jpg', 'name':'Matte Lipstick','price':'Rs:659'})">
+        </center>
+    </div>
+    <div class="box"><img src="m3.Jpeg">
+        <center>Browcara<br/>Rs:649<br/>
+            <input type="button" value="Add To Cart" onclick="addToCart({'img':'m3.jpeg', 'name':'Browcara','price':'Rs:649'})">
+        </center>
+    </div>
+    <div class="box"><img src="m4.Jpeg">
+        <center>Nail Polish<br/>Rs:139<br/>
+            <input type="button" value="Add To Cart" onclick="addToCart({'img':'m4.jpeg', 'name':'Nail Polish','price':'Rs:139'})">
+        </center>
+    </div>
+    <div class="box"><img src="m1.Jpeg">
+        <center>Foundation<br/>Rs:599<br/>
+            <input type="button" value="Add To Cart" onclick="addToCart({'img':'m1.jpeg', 'name':'Foundation','price':'Rs:599'})">
+        </center>
+    </div>
+    <div class="box"><img src="m2.Jpeg">
+        <center>Cream Lipstick<br />Rs:239<br/>
+            <input type="button" value="Add To Cart" onclick="addToCart({'img':'m2.jpeg', 'name':'Cream Lipstick','price':'Rs:239'})">
+        </center>
+    </div>
+  <center>
+<h2>Click on button to try different shades of :</h2>
+<p id="p1" style="color:white;background-color:black;font-size:100px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">LIPSTICK </p>
+
+<form>
+<input type="button" value="Red" onclick="fun()">
+<input type="button" value="Crimson" onclick="fun9()">
+<input type="button" value="Orangered" onclick="fun8()">
+<input type="button" value="Orange" onclick="fun1()">
+<input type="button" value="Magenta" onclick="fun4()">
+<input type="button" value="Pink" onclick="fun2()">
+<input type="button" value="Baby pink" onclick="fun3()">
+<input type="button" value="Purple" onclick="fun5()">
+<input type="button" value="Violet" onclick="fun6()">
+<input type="button" value="Orchid" onclick="fun10()">
+<input type="button" value="Plum" onclick="fun7()">
+
+
+
+</form>
+
+</center>
+</body>
+</html>

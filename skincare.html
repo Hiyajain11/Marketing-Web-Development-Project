@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>skin care</title>
+    <style>
+#b{
+float:right;
+border-radius:6px;
+padding:5px ;
+
+}
+ .container{
+            display: flex;
+            justify-content:space-around;
+        }
+.navbar{
+background-color:black;
+border-radius: 30px;
+}
+.navbar li{
+    float: left;
+    list-style: none;
+    margin: 5px 10px;
+    padding-top: 5px;
+}
+.navbar ul{
+    overflow: auto;
+}
+.navbar li a{
+    text-decoration: none;
+    color: white;
+}
+.navbar li a:hover{
+    color: lime;
+}
+#search{
+    float: right;
+    padding: 5px 10px;
+}
+.navbar input{
+    border-radius: 10px;
+    }
+        .box {
+            border: 4px solid pink;
+            background-color: white;
+            width: 400px;
+            height: 500px;
+            margin: 15px;
+            font-size: 22px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .box img {
+            width: 100%;
+           height: 400;
+        }
+        
+    </style>
+    <script>
+        function addToCart(prod) {
+            val = confirm(`${prod.name}, Add to Cart?`);
+            if (val) {
+                let cart=JSON.parse(localStorage.getItem('cart'));
+                if(cart) {
+                    cart.items.push(prod);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                }
+                else localStorage.setItem('cart',JSON.stringify({'items':new Array(prod)}));
+                alert("Added to Cart")
+            }
+        }
+    </script>
+</head>
+<body bgcolor=lavender>
+<header>
+<nav class="navbar">
+<ul>
+<li><a href="website.html" taget="_blank">Home</a></li>
+<li><a href="about.html" taget="_blank">About</a></li>
+<li><a href="catalogue.html" taget="_blank">Catalogue</a></li>
+<li><a href="register.html" taget="_blank">Join Us</a></li>
+<li><a href="cart.html" taget="_blank">🛒</a></li>
+
+<button id="b">🔍</button>
+<input type="text" id="search" placeholder="Search This Website" >
+
+</ul>
+</nav>
+</header>
+
+
+
+    <div class="container">
+        <div class="box"><img src="sc1.webp">
+            <center>Deep Cleanse Face Wash<br/>Rs:549<br/>
+                <input type="button" value="Add To Cart" onclick="addToCart({'img':'sc1.webp', 'name':'Deep Cleanse Face Wash','price':'Rs:549'})">
+            </center>
+        </div>
+        <div class="box"><img src="sc2.Jpeg">
+            <center>Coconut Hair Oil <br/>Rs:209<br/>
+                <input type="button" value="Add To Cart" onclick="addToCart({'img':'sc2.jpeg', 'name':'Coconut Hair Oil','price':'Rs:209'})">
+            </center>
+        </div>
+        <div class="box"><img src="sc3.jpeg">
+            <center>Advanced Skin Protector<br/>Rs:1,079<br/>
+                <input type="button" value="Add To Cart" onclick="addToCart({'img':'sc3.jpeg', 'name':'Advanced Skin Protector','price':'Rs:1,079'})">
+            </center>
+        </div>
+        <div class="box"><img src="sc4.Jpeg">
+            <center>Refreshing Toner<br/>Rs:379<br/>
+                <input type="button" value="Add To Cart" onclick="addToCart({'img':'sc4.jpeg', 'name':'Refreshing Toner','price':'Rs:379'})">
+            </center>
+        </div>
+        <div class="box"><img src="sc5.Jpeg">
+            <center>Strawberry Face Wash<br/>Rs:149<br/>
+                <input type="button" value="Add To Cart" onclick="addToCart({'img':'sc5.jpeg', 'name':'Strawberry Face Wash','price':'Rs:149'})">
+            </center>
+        </div>
+        <div class="box"><img src="sc6.jpeg">
+            <center>Night Cream Light<br/>Rs:1,099<br/>
+                <input type="button" value="Add To Cart" onclick="addToCart({'img':'sc6.jpeg', 'name':'Night Cream Light','price':'Rs:1099'})">
+            </center>
+        </div>
+    </div>
+</body>
+
+</html>

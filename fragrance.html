@@ -1,0 +1,133 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <title>perfume</title>
+    <style>
+#b{
+float:right;
+border-radius:6px;
+padding:5px ;
+
+}
+ .container{
+            display: flex;
+            justify-content:space-around;
+        }
+.navbar{
+background-color:black;
+border-radius: 30px;
+}
+.navbar li{
+    float: left;
+    list-style: none;
+    margin: 5px 10px;
+    padding-top: 5px;
+}
+.navbar ul{
+    overflow: auto;
+}
+.navbar li a{
+    text-decoration: none;
+    color: white;
+}
+.navbar li a:hover{
+    color: lime;
+}
+#search{
+    float: right;
+    padding: 5px 10px;
+}
+.navbar input{
+    border-radius: 10px;
+    }
+ .box {
+            border: 4px solid pink;
+            background-color: white;
+            width: 400px;
+            height: 500px;
+            margin: 15px;
+            font-size: 22px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .box img {
+            height:400px;
+            width: 100%;
+        }
+        
+</style>
+<script>
+        function addToCart(prod) {
+            val = confirm(`${prod.name}, Add to Cart?`);
+            if (val) {
+                let cart=JSON.parse(localStorage.getItem('cart'));
+                if(cart) {
+                    cart.items.push(prod);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                }
+                else localStorage.setItem('cart',JSON.stringify({'items':new Array(prod)}));
+                alert("Added to Cart")
+            }
+        }
+    </script>
+</head>
+
+<body bgcolor=lavender>
+<header>
+<nav class="navbar">
+<ul>
+<li><a href="website.html" taget="_blank">Home</a></li>
+<li><a href="about.html" taget="_blank">About</a></li>
+<li><a href="catalogue.html" taget="_blank">Catalogue</a></li>
+<li><a href="register.html" taget="_blank">Join Us</a></li>
+<li><a href="cart.html" taget="_blank">🛒</a></li>
+
+<button id="b">🔍</button>
+<input type="text" id="search" placeholder="Search This Website" >
+
+</ul>
+</nav>
+</header>
+
+    <div class="container">
+        <div class="box"><img src="per1.jpg">
+            <center>Mon Parfum<br/>Rs:2,869<br/>
+                <input type="button" value="Add To Cart" onclick="addToCart({'img':'per1.jpg', 'name':'Mon Parfum','price':'Rs:2869'})">
+            </center>
+        </div>
+
+        <div class="box"><img src="per2.jpeg">
+            <center>Loved Up<br/>Rs:1,299<br/>
+                <input type="button" value="Add To Cart" onclick="addToCart({'img':'per2.jpeg', 'name':'Loved Up','price':'Rs:1299'})">
+            </center>
+        </div>
+        <div class="box"><img src="per4.jpg">
+            <center>So tempting<br />Rs:629<br/>
+                <input type="button" value="Add To Cart" onclick="addToCart({'img':'per4.jpg', 'name':'So tempting','price':'Rs:629'})">
+            </center>
+        </div>
+        <div class="box"><img src="per3.jpeg">
+            <center>Perfumed Body Spray<br/>Rs:249<br/>
+                <input type="button" value="Add To Cart" onclick="addToCart({'img':'per3.jpeg', 'name':'Perfumed Body Spray','price':'Rs:249'})">
+            </center>
+        </div>
+        <div class="box"><img src="per5.jpeg">
+            <center>Cherry Blossom<br/>Rs:1,099<br/>
+                <input type="button" value="Add To Cart" onclick="addToCart({'img':'per5.jpeg', 'name':'Cherry Blossom','price':'Rs:1099'})">
+            </center>
+        </div>
+        <div class="box"><img src="per6.jpeg">
+            <center>Pink Boom Spray Cologne<br/>Rs:899<br/>
+                <input type="button" value="Add To Cart" onclick="addToCart({'img':'per6.jpeg', 'name':'Pink Boom Spray Cologne','price':'Rs:899'})">
+            </center>
+        </div>
+    </div>
+</body>
+
